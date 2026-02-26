@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
 	const [candidates, setCandidates] = useState([]);
     const [votedId, setVotedId] = useState(null);
+
     // const [nid, setNid] = useState("");
 
     // Update state when input changes
@@ -31,7 +32,7 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get('https://dvm-server.onrender.com:8080/api/candidates/')
+			.get('https://dvm-server.onrender.com/api/candidates/')
 			.then((response) => {
 				setCandidates(response.data);
 			})
@@ -45,7 +46,7 @@ function App() {
         setVotedId(c.id);
         c.votes += 1;
         axios
-        .get('https://dvm-server.onrender.com:8080/api/candidates/' + c.id)
+        .get('https://dvm-server.onrender.com/api/candidates/' + c.id)
         .then((response) => {
             console.log(response.data);
 

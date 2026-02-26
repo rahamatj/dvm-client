@@ -6,7 +6,7 @@ export default defineConfig({
 	plugins: [react()],
 	server: {
 		proxy: {
-			'/api': 'https://dvm-server.onrender.com:8080',
+			'/api': 'https://dvm-server.onrender.com',
 		},
 	},
 });
