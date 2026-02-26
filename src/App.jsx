@@ -31,7 +31,7 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:8080/api/candidates/')
+			.get('https://dvm-server.onrender.com:8080/api/candidates/')
 			.then((response) => {
 				setCandidates(response.data);
 			})
@@ -45,7 +45,7 @@ function App() {
         setVotedId(c.id);
         c.votes += 1;
         axios
-        .get('http://localhost:8080/api/candidates/' + c.id)
+        .get('https://dvm-server.onrender.com:8080/api/candidates/' + c.id)
         .then((response) => {
             console.log(response.data);
 
