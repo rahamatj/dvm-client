@@ -6,28 +6,28 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
 	const [candidates, setCandidates] = useState([]);
     const [votedId, setVotedId] = useState(null);
-    const [nid, setNid] = useState("");
+    // const [nid, setNid] = useState("");
 
     // Update state when input changes
-    const handleChange = (e) => {
-        setNid(e.target.value);
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // prevent page reload
-
-        await axios.get("http://localhost:8080/api/voters/" + nid)
-            .then((response) => {
-                console.log(response);
-                toast("NID received successfully.");
-            })
-            .catch((error) => {
-                console.error(error);
-                toast("Something went wrong. Please try again later.");
-            });
-
-        console.log("Submitted NID:", nid);
-    };
+    // const handleChange = (e) => {
+    //     setNid(e.target.value);
+    // };
+    //
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault(); // prevent page reload
+    //
+    //     await axios.get("http://localhost:8080/api/voters/" + nid)
+    //         .then((response) => {
+    //             console.log(response);
+    //             toast("NID received successfully.");
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //             toast("Something went wrong. Please try again later.");
+    //         });
+    //
+    //     console.log("Submitted NID:", nid);
+    // };
 
 	useEffect(() => {
 		axios
